@@ -40,16 +40,16 @@ export function getTimeframe(timeWindow) {
 export function getPoolLink(token0Address, token1Address = null, remove = false) {
   if (!token1Address) {
     return (
-      `https://app.uniswap.org/#/` +
+      `https://moonba.co/#/` +
       (remove ? `remove` : `add`) +
-      `/v2/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address}/${'ETH'}`
+      `/${token0Address === '0x01586239b56ca158f1e31e4c6a07b3ae59d623b5' ? 'OLT' : token0Address}/${'OLT'}`
     )
   } else {
     return (
-      `https://app.uniswap.org/#/` +
+      `https://moonba.co/#/` +
       (remove ? `remove` : `add`) +
-      `/v2/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address}/${
-        token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token1Address
+      `/${token0Address === '0x01586239b56ca158f1e31e4c6a07b3ae59d623b5' ? 'OLT' : token0Address}/${
+        token1Address === '0x01586239b56ca158f1e31e4c6a07b3ae59d623b5' ? 'OLT' : token1Address
       }`
     )
   }
@@ -57,11 +57,11 @@ export function getPoolLink(token0Address, token1Address = null, remove = false)
 
 export function getSwapLink(token0Address, token1Address = null) {
   if (!token1Address) {
-    return `https://app.uniswap.org/#/swap?inputCurrency=${token0Address}`
+    return `https://moonba.co/#/swap/${token0Address}`
   } else {
-    return `https://app.uniswap.org/#/swap?inputCurrency=${
-      token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address
-    }&outputCurrency=${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token1Address}`
+    return `https://moonba.co/#/swap/${
+      token0Address === '0x01586239b56ca158f1e31e4c6a07b3ae59d623b5' ? 'OLT' : token0Address
+    }/${token1Address === '0x01586239b56ca158f1e31e4c6a07b3ae59d623b5' ? 'OLT' : token1Address}`
   }
 }
 
@@ -70,12 +70,12 @@ export function getMiningPoolLink(token0Address) {
 }
 
 export function getUniswapAppLink(linkVariable) {
-  let baseUniswapUrl = 'https://app.uniswap.org/#/uni'
+  let baseUniswapUrl = 'https://moonba.co/#'
   if (!linkVariable) {
     return baseUniswapUrl
   }
 
-  return `${baseUniswapUrl}/ETH/${linkVariable}`
+  return `${baseUniswapUrl}/OLT/${linkVariable}`
 }
 
 export function localNumber(val) {
@@ -303,10 +303,10 @@ export const setThemeColor = (theme) => document.documentElement.style.setProper
 export const Big = (number) => new BigNumber(number)
 
 export const urls = {
-  showTransaction: (tx) => `https://etherscan.io/tx/${tx}/`,
-  showAddress: (address) => `https://www.etherscan.io/address/${address}/`,
-  showToken: (address) => `https://www.etherscan.io/token/${address}/`,
-  showBlock: (block) => `https://etherscan.io/block/${block}/`,
+  showTransaction: (tx) => `https://mainnet-explorer.oneledger.network/tx/${tx}/`,
+  showAddress: (address) => `https://mainnet-explorer.oneledger.network/address/${address}/`,
+  showToken: (address) => `https://mainnet-explorer.oneledger.network/token/${address}/`,
+  showBlock: (block) => `https://mainnet-explorer.oneledger.network/block/${block}/`,
 }
 
 export const formatTime = (unix) => {

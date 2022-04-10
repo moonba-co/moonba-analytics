@@ -4,7 +4,7 @@ import { HttpLink } from 'apollo-link-http'
 
 export const client = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/ianlapham/uniswapv2',
+    uri: 'http://143.110.222.158:8000/subgraphs/name/moonba-co/dex-subgraph-oneledger',
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
@@ -12,23 +12,16 @@ export const client = new ApolloClient({
 
 export const healthClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/index-node/graphql',
+    uri: 'http://143.110.222.158:8030/graphql',
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
 })
 
-export const v1Client = new ApolloClient({
-  link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap',
-  }),
-  cache: new InMemoryCache(),
-  shouldBatch: true,
-})
-
+// NOTE: Not implemented
 export const stakingClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/way2rach/talisman',
+    uri: 'http://143.110.222.158:8000/subgraphs/name/way2rach/talisman',
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
@@ -36,7 +29,7 @@ export const stakingClient = new ApolloClient({
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
+    uri: 'http://143.110.222.158:8000/subgraphs/name/blocklytics/oneledger-blocks-test',
   }),
   cache: new InMemoryCache(),
 })

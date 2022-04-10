@@ -1,7 +1,7 @@
 {
-  "name": "@uniswap/info",
+  "name": "@moonba/moonba-analytics",
   "private": true,
-  "homepage": "https://info.uniswap.org",
+  "homepage": "https://info.moonba.co",
   "devDependencies": {
     "@popperjs/core": "^2.4.2",
     "@reach/portal": "^0.10.3",
