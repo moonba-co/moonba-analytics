@@ -29,7 +29,7 @@ export const stakingClient = new ApolloClient({
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://mainnet-graph.oneledger.network/subgraphs/name/blocklytics/oneledger-blocks-test',
+    uri: 'https://mainnet-graph.oneledger.network/subgraphs/name/blocklytics/oneledger-blocks',
   }),
   cache: new InMemoryCache(),
 })
